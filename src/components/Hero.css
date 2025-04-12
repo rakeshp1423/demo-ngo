@@ -1,0 +1,55 @@
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background-image: url('../assets/hero.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-attachment: fixed; /* Enables the parallax effect */
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    overflow: hidden;
+}
+
+.overlay {
+     /* Dark overlay for better text visibility */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 700px;
+    padding: 2rem;
+    margin-bottom: 150px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: #123458;
+    color: white;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #D4C9BE;
+    color: #123458;
+}

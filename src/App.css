@@ -1,0 +1,15 @@
+html{
+  scroll-behavior: smooth;
+}
+
+.section{
+  height: 100vh;
+  padding: 3rem;
+}
+
+#hero{background-color: #fdf6e3;}
+#about{background-color: #eee8d5;}
+#services{background-color: #93a1a1;}
+#portfolio{background-color: #268bd2;}
+#contact{background-color: #859900;}
+#footer{background-color: #2aa198;}
