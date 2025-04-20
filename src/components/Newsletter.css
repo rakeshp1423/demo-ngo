@@ -1,0 +1,54 @@
+.newsletter-section {
+    background-color: #fff3e6;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 2rem;
+  }
+  
+  .newsletter-section h2 {
+    font-size: 2rem;
+    color: #cc6600;
+    margin-bottom: 0.5rem;
+  }
+  
+  .newsletter-section p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .newsletter-form input {
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    width: 250px;
+    border: 2px solid #cc6600;
+    border-radius: 5px;
+  }
+  
+  .newsletter-form button {
+    padding: 0.7rem 1.5rem;
+    background-color: #cc6600;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s ease;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #b35500;
+  }
+  
+  .thank-you-msg {
+    font-size: 1.2rem;
+    color: green;
+    margin-top: 1rem;
+  }
+  

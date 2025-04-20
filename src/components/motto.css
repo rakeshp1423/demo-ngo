@@ -1,0 +1,86 @@
+.motto-section {
+    position: relative;
+    background: url('/bg-motto.jpg') center/cover no-repeat;
+    padding: 4rem 2rem;
+    text-align: center;
+    overflow: hidden;
+    z-index: 1;
+    color: #fff;
+  }
+  
+  .motto-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* dark overlay */
+    z-index: 0;
+  }
+  
+  .motto-container {
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    z-index: 2;
+  }
+  
+  .motto-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 600;
+    color: #ffddee;
+    margin: 1.5rem 0;
+    line-height: 1.6;
+  }
+  
+  .motto-sub {
+    font-size: 1rem;
+    color: #eee;
+    margin-top: 2rem;
+  }
+  
+  .motto-line {
+    width: 60px;
+    height: 4px;
+    background-color: #f78fb3;
+    margin: 1rem auto;
+    border-radius: 5px;
+  }
+  
+  .quote-icon {
+    font-size: 2rem;
+    color: #f78fb3;
+  }
+  
+  .motto-form {
+    margin-top: 2rem;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .motto-form input {
+    padding: 0.6rem 1rem;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    width: 250px;
+    font-size: 1rem;
+  }
+  
+  .motto-form button {
+    background-color: #ff5eaa;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .motto-form button:hover {
+    background-color: #e84393;
+  }
+  
