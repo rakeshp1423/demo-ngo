@@ -1,4 +1,5 @@
 import AOS from 'aos';
+import Preloader from "./components/Preloader";
 import 'aos/dist/aos.css';
 import React, { useEffect, useState } from 'react'; // Add useEffect here
 import SuccessSlider from './components/SuccessSlider';
@@ -22,6 +23,7 @@ function App() {
 
   return (
     <>
+      <Preloader />
       <Navbar />
       <Hero />
       <About />
