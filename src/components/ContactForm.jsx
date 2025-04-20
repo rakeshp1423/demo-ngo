@@ -1,81 +1,118 @@
+// src/components/ContactForm.jsx
+import { motion } from "framer-motion"; // Import motion from Framer Motion
 import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify"; // Import ToastContainer and toast
+import "react-toastify/dist/ReactToastify.css"; // Import Toastify CSS
+import contactImage from "../assets/ngo2.jpg";
 import "./ContactForm.css";
 
 const ContactForm = () => {
-  const [form, setForm] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
+    rating: "",
   });
-
-  const [errors, setErrors] = useState({});
-  const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
-
-  const validate = () => {
-    let errs = {};
-    if (!form.name.trim()) errs.name = "Name is required";
-    if (!form.email.trim()) {
-      errs.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(form.email)) {
-      errs.email = "Email is invalid";
-    }
-    if (!form.message.trim()) errs.message = "Message is required";
-    return errs;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const validationErrors = validate();
-    if (Object.keys(validationErrors).length === 0) {
-      console.log("Form Submitted", form);
-      setSubmitted(true);
-      setForm({ name: "", email: "", message: "" });
-      setErrors({});
-    } else {
-      setErrors(validationErrors);
-      setSubmitted(false);
-    }
+    toast.success("Thank you for reaching out! We'll get back to you soon."); // Show success toast
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+      rating: "",
+    });
   };
 
   return (
-    <section id="contact-form" className="contact-form-section" data-aos="fade-up">
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Your Name"
-          value={form.name}
-          onChange={handleChange}
-        />
-        {errors.name && <span className="error">{errors.name}</span>}
+    <section id="contact" className="contact-section">
+      <div className="contact-container">
+        <div className="contact-image">
+          <img src={contactImage} alt="Contact Us" />
+        </div>
+        {/* Animate the form container */}
+        <motion.div
+          className="contact-form-container"
+          initial={{ opacity: 0, x: 50 }} // Start hidden and slightly to the right
+          animate={{ opacity: 1, x: 0 }} // Fade in and slide to position
+          transition={{ duration: 0.8, ease: "easeOut" }} // Smooth transition
+        >
+          <h2>Contact Us</h2>
+          <form onSubmit={handleSubmit} className="contact-form">
+            <input
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+              value={formData.name}
+              onChange={handleChange}
+            />
 
-        <input
-          type="email"
-          name="email"
-          placeholder="Your Email"
-          value={form.email}
-          onChange={handleChange}
-        />
-        {errors.email && <span className="error">{errors.email}</span>}
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+              value={formData.email}
+              onChange={handleChange}
+            />
 
-        <textarea
-          name="message"
-          placeholder="Your Message"
-          value={form.message}
-          onChange={handleChange}
-        />
-        {errors.message && <span className="error">{errors.message}</span>}
+            <select
+              name="subject"
+              required
+              value={formData.subject}
+              onChange={handleChange}
+            >
+              <option value="">-- Select Subject --</option>
+              <option value="Help">Help / Support</option>
+              <option value="Feedback">Give Feedback</option>
+              <option value="Partnership">Partnership</option>
+              <option value="Volunteer">Volunteer</option>
+            </select>
 
-        <button type="submit">Send Message</button>
+            {formData.subject === "Feedback" && (
+              <div className="rating-row">
+                <label>How would you rate us?</label>
+                <select
+                  name="rating"
+                  value={formData.rating}
+                  onChange={handleChange}
+                >
+                  <option value="">Select Rating</option>
+                  <option value="5">🌟🌟🌟🌟🌟</option>
+                  <option value="4">🌟🌟🌟🌟</option>
+                  <option value="3">🌟🌟🌟</option>
+                  <option value="2">🌟🌟</option>
+                  <option value="1">🌟</option>
+                </select>
+              </div>
+            )}
 
-        {submitted && <p className="thank-you">Thank you for reaching out!</p>}
-      </form>
+            <textarea
+              name="message"
+              placeholder="Your Message"
+              required
+              rows="5"
+              value={formData.message}
+              onChange={handleChange}
+            ></textarea>
+
+            <button type="submit">Submit</button>
+          </form>
+        </motion.div>
+      </div>
+      <ToastContainer /> {/* Add ToastContainer to render toast notifications */}
     </section>
   );
 };

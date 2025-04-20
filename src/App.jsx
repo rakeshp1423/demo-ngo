@@ -11,8 +11,7 @@ import Motto from './components/Motto';
 import Navbar from './components/Navbar';
 import ContactForm from "./components/ContactForm";
 import Newsletter from "./components/Newsletter";
-import Footer from "./components/Footer";
-
+import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {

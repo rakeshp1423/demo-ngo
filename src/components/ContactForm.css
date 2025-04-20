@@ -1,48 +1,98 @@
-.contact-form-section {
-    padding: 2rem;
-    background: #fffbe7;
-    text-align: center;
-  }
-  
-  .contact-form-section form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .contact-form-section input,
-  .contact-form-section textarea {
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    width: 100%;
-  }
-  
-  .contact-form-section button {
-    background-color: #0077cc;
-    color: white;
-    border: none;
-    padding: 0.8rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .contact-form-section button:hover {
-    background-color: #005fa3;
-  }
-  
-  .error {
-    color: red;
-    font-size: 0.8rem;
-    text-align: left;
-  }
-  
-  .thank-you {
-    color: green;
-    margin-top: 1rem;
-  }
-  
+.contact-section {
+  display: flex;
+  align-items: stretch; /* Ensure both sides stretch to the same height */
+  gap: 0; /* Remove any gap between the image and the form */
+  height: 100vh; /* Make the section full screen */
+  background-color: #f4f4f9; /* Optional: Add a background color */
+}
+
+.contact-container {
+  display: flex;
+  flex: 1;
+}
+
+.contact-image {
+  flex: 1; /* Take up 50% of the width */
+  height: 100%; /* Ensure the image spans the full height */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.contact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+
+.contact-form-container {
+  flex: 1; /* Take up 50% of the width */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+  background-color: #ffffff; /* Optional: Add a background color for contrast */
+}
+
+.contact-form-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Add more spacing between form elements */
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Rounded corners for a modern look */
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #268bd2; /* Highlight border on focus */
+  box-shadow: 0 4px 8px rgba(38, 139, 210, 0.2); /* Add a stronger shadow on focus */
+  outline: none; /* Remove default outline */
+}
+
+.contact-form textarea {
+  resize: none; /* Prevent resizing for a cleaner look */
+}
+
+.contact-form select {
+  appearance: none; /* Remove default dropdown styling */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23268bd2'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E")
+    no-repeat right 1rem center; /* Add a custom dropdown arrow */
+  background-size: 1rem;
+  padding-right: 2.5rem; /* Add space for the arrow */
+}
+
+.contact-form button {
+  padding: 0.6rem 1.5rem; /* Adjust padding for a smaller button */
+  background-color: #268bd2;
+  color: white;
+  border: none;
+  border-radius: 25px; /* Rounded button */
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.contact-form button:hover {
+  background-color: #1a5f8a; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.contact-form button:active {
+  transform: translateY(0); /* Reset lift effect on click */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2); /* Reduce shadow on click */
+}
