@@ -2,6 +2,11 @@ html{
   scroll-behavior: smooth;
 }
 
+/* Prevent overflow */
+body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 .section{
   height: 100vh;
   padding: 3rem;
