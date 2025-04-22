@@ -3,10 +3,10 @@
   align-items: stretch; /* Ensure both sides stretch to the same height */
   gap: 0; /* Remove any gap between the image and the form */
   height: 100vh; /* Make the section full screen */
-  background-color: #cc6600; /* Optional: Add a background color */
+  background-color: #ffffff; /* Optional: Add a background color */
 }
 
-. .contact-container h2 {
+ .contact-container h2 {
   font-size: 2.5rem; /* Increase the font size */
   margin-bottom: 1rem; /* Add some space below the heading */
   color: #cc6600; /* Change the text color to white */
@@ -124,4 +124,57 @@
 
 .button:active {
   transform: translateY(-50%) scale(0.95); /* Slightly shrink on click */
+}
+
+
+.rating-row {
+  margin: 10px 0;
+}
+
+.rating-stars {
+  display: flex;
+  gap: 0.4rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.rating-stars .star {
+  color: #ccc;
+  transition: color 0.3s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.rating-stars .star:hover,
+.rating-stars .star:hover ~ .star {
+  color: #f0c420;
+}
+
+.rating-stars .star.filled {
+  color: #f0c420;
+}
+
+.rating-stars .star:active {
+  transform: scale(1.2);
+}
+
+.rating-stars .star::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: -1.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+  opacity: 0;
+  white-space: nowrap;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.rating-stars .star:hover::after {
+  opacity: 1;
 }

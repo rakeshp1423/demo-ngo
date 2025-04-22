@@ -83,20 +83,25 @@ const ContactForm = () => {
 
             {formData.subject === "Feedback" && (
               <div className="rating-row">
-                <label>How would you rate us?</label>
-                <select
-                  name="rating"
-                  value={formData.rating}
-                  onChange={handleChange}
-                >
-                  <option value="">Select Rating</option>
-                  <option value="5">🌟🌟🌟🌟🌟</option>
-                  <option value="4">🌟🌟🌟🌟</option>
-                  <option value="3">🌟🌟🌟</option>
-                  <option value="2">🌟🌟</option>
-                  <option value="1">🌟</option>
-                </select>
+              <label>How would you rate us?</label>
+              <div className="rating-stars">
+                {[1, 2, 3, 4, 5].map((star) => (
+                  <span
+                    key={star}
+                    className={formData.rating >= star ? "star filled" : "star"}
+                    onClick={() =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        rating: star,
+                      }))
+                    }
+                  >
+                    ★
+                  </span>
+                ))}
               </div>
+            </div>
+            
             )}
 
             <textarea

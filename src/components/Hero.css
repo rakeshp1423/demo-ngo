@@ -1,7 +1,7 @@
 .hero-section {
     position: relative;
     height: 100vh;
-    background-image: url('../assets/hero5.jpeg'); /* Replace with your image path */
+    background-image: url('../assets/hero1.jpg'); /* Replace with your image path */
     background-size: cover;
     background-attachment: fixed; /* Enables the parallax effect */
     background-position: center;

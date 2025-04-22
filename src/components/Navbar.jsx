@@ -8,10 +8,11 @@ const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            if (window.scrollY > 50) {
-                setIsScrolled(true);
+            const heroSectionHeight = document.getElementById('hero').offsetHeight; // Get the height of the hero section
+            if (window.scrollY > heroSectionHeight) {
+                setIsScrolled(true); // Add scrolled class after passing the hero section
             } else {
-                setIsScrolled(false);
+                setIsScrolled(false); // Remove scrolled class when above the hero section
             }
         };
 
@@ -24,7 +25,6 @@ const Navbar = () => {
     return (
         <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
             <div className="logo">
-                {/* Wrap the logo in an <a> tag to refresh the page */}
                 <a href="/">
                     <img src={logo} alt="Mamata Logo" className="logo-image" />
                 </a>
@@ -51,7 +51,7 @@ const Navbar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to="contact" smooth={true} duration={500}>
+                    <Link className='contact' to="contact" smooth={true} duration={500}>
                         Contact
                     </Link>
                 </li>

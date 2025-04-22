@@ -30,7 +30,7 @@ function App() {
       <Motto />
       <SuccessSlider />
       <Donate />
-      <Newsletter />
+      {/* <Newsletter /> */}
       <ContactForm />
       {/* <Contact /> */}
       <Footer />
