@@ -7,6 +7,7 @@ const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
+
         const handleScroll = () => {
             const heroSectionHeight = document.getElementById('hero').offsetHeight; // Get the height of the hero section
             if (window.scrollY > heroSectionHeight) {
